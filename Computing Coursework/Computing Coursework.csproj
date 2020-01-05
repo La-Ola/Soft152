@@ -60,6 +60,7 @@
     <Compile Include="FrontPage.Designer.cs">
       <DependentUpon>FrontPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="neighbourDATA.cs" />
     <Compile Include="propertyDATA.cs" />
     <Compile Include="Neighbour.cs" />
     <Compile Include="District.cs" />
