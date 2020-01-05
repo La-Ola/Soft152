@@ -22,9 +22,22 @@ namespace Computing_Coursework
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void TXTdistname_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void TXTDistNeighbs_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+   
+        private void BTNsubName_Click(object sender, EventArgs e)
+        {
+            string newDistName = TXTdistname.Text;
+            string newDistNeighbs = TXTDistNeighbs.Text;
+
+            District district = new District(newDistName, newDistNeighbs.ToString());
+        } 
     }
 }
