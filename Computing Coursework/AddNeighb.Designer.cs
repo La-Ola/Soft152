@@ -1,4 +1,6 @@
-﻿namespace Computing_Coursework
+﻿using System;
+
+namespace Computing_Coursework
 {
     partial class AddNeighb
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             this.TXTdistname = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TXTDisName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TXTnewNeighbName = new System.Windows.Forms.TextBox();
             this.BTNsubName = new System.Windows.Forms.Button();
@@ -46,14 +48,14 @@
             this.TXTdistname.TabIndex = 1;
             this.TXTdistname.Text = "        District Name        ";
             // 
-            // textBox1
+            // TXTDisName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.textBox1.Location = new System.Drawing.Point(234, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 26);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.TXTdistName_TextChanged);
+            this.TXTDisName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.TXTDisName.Location = new System.Drawing.Point(234, 29);
+            this.TXTDisName.Name = "TXTDisName";
+            this.TXTDisName.Size = new System.Drawing.Size(240, 26);
+            this.TXTDisName.TabIndex = 2;
+            this.TXTDisName.TextChanged += new System.EventHandler(this.TXTDistName_TextChanged);
             // 
             // label1
             // 
@@ -97,20 +99,26 @@
             this.Controls.Add(this.BTNsubName);
             this.Controls.Add(this.TXTnewNeighbName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TXTDisName);
             this.Controls.Add(this.TXTdistname);
             this.Name = "AddNeighb";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNeighb";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private void TXTDistName_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         #endregion
 
         private System.Windows.Forms.Label TXTdistname;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXTDisName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXTnewNeighbName;
         private System.Windows.Forms.Button BTNsubName;

@@ -17,17 +17,7 @@ namespace Computing_Coursework
             InitializeComponent();
         }
 
-        private void TXTdistName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TXTnewNeighbName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TXTamountOfProps_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -37,21 +27,24 @@ namespace Computing_Coursework
             string districtAssign = TXTdistname.Text;
             for (int i = 0; i <= DistrictDATA.libDistrict.Length ; i++)
             {
+                
                 if (districtAssign == DistrictDATA.libDistrict[i].GetDistName())
                 {
                     string newNeighbName = TXTnewNeighbName.Text;
                     int newNeighbProps = 0;
-                    int distNum = DistrictDATA.libDistrict[i].GetnumNaighbsInDistrict();
+                    int distNumUp = DistrictDATA.libDistrict[i].GetnumNaighbsInDistrict() + 1;
+                    DistrictDATA.libDistrict[i].SetnumNaighbsInDistrict(distNumUp.ToString());
 
-                    District district = new District(districtAssign, distNum.ToString());
                     Neighbour neighbour = new Neighbour(newNeighbName, newNeighbProps);
                     
                     //get length of array
-                    int lengthOf = DistrictDATA.libDistrict[i].GetNeighbLib().Length;
+                    int lengthOf = DistrictDATA.libDistrict[i].libAllNeighbs.Length;
                     //makes array one bigger
-                    Array.Resize(ref district.libAllNeighbs, lengthOf + 1);
+                    Array.Resize(ref DistrictDATA.libDistrict[i].libAllNeighbs, lengthOf + 1);
                     //adds new neighbourhood to District array
-                    DistrictDATA.libDistrict[i].GetNeighbLib()[lengthOf] = neighbour;
+                    DistrictDATA.libDistrict[i].libAllNeighbs[lengthOf] = neighbour;
+
+                    this.Hide();
                 }
             }
             

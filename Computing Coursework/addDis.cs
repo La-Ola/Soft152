@@ -34,7 +34,7 @@ namespace Computing_Coursework
             int newDistNeighbs = 0;
 
             District district = new District(newDistName, newDistNeighbs.ToString());
-            Debug.WriteLine(newDistName);
+
             //get length of array
             int lengthOf = DistrictDATA.libDistrict.Length;
             //makes array one bigger

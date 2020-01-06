@@ -14,7 +14,7 @@ namespace Computing_Coursework
 {
     public partial class FrontPage : Form
     {
-        private Property[] array;
+        
 
         public FrontPage()
         {
@@ -274,20 +274,37 @@ namespace Computing_Coursework
             listViewNEIGHB.Items.Clear();
             foreach (Neighbour neighb in DistrictDATA.libDistrict[districtIndex].GetNeighbLib())
             {
-                listViewNEIGHB.Items.Add(neighb.GetneighbName());
+                if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
+                { 
+                    listViewNEIGHB.Items.Add(neighb.GetneighbName());
+                    listViewNEIGHB.SelectedItem = listViewNEIGHB.Items[0];
+
+                }
+                else
+                {
+                    listViewNEIGHB.Items.Add("No Neighbouhoods Available");
+                }
+                
             }
-            listViewNEIGHB.SelectedItem = listViewNEIGHB.Items[0];
         }
 
         private void showProp(int districtIndex, int neighborhoodIndex)
         {
             listViewPROP.Items.Clear();
-            foreach (Property prop in DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetPropLib())
+            if (DistrictDATA.libDistrict[districtIndex].GetnumNaighbsInDistrict() != 0)
             {
-                listViewPROP.Items.Add(prop.GetpropName());                
+                foreach (Property prop in DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetPropLib())
+                {
+                    listViewPROP.Items.Add(prop.GetpropName());
+                    listViewPROP.SelectedItem = listViewPROP.Items[0];
+                }
             }
-            
-            listViewPROP.SelectedItem = listViewPROP.Items[0];
+            else
+            {
+                listViewPROP.Items.Add("No Properties Available");
+            }
+                                
+                    
             
         }
 

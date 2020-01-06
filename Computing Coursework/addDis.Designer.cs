@@ -36,7 +36,7 @@ namespace Computing_Coursework
             this.BTNsubName = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // TXTdistname
+            // TXTdistrict
             // 
             this.TXTdistrict.AutoSize = true;
             this.TXTdistrict.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
