@@ -118,6 +118,8 @@ namespace Computing_Coursework
 
         private void btnADDDIST_Click(object sender, EventArgs e)
         {
+            Form f = new AddDis();
+            f.ShowDialog();
         }
 
         private void btnEDITNEIGHB_Click(object sender, EventArgs e)

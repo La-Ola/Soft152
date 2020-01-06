@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Computing_Coursework
 {
-    public partial class addDis : Form
+    public partial class AddDis : Form
     {
-        public addDis()
+        public AddDis()
         {
             InitializeComponent();
         }
