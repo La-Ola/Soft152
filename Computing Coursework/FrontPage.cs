@@ -101,7 +101,6 @@ namespace Computing_Coursework
                             }
 
                         }
-                    
                     }
                 }
             }
@@ -118,8 +117,8 @@ namespace Computing_Coursework
 
         private void btnADDDIST_Click(object sender, EventArgs e)
         {
-            Form f = new AddDis();
-            f.ShowDialog();
+            Form adddis = new AddDis();
+            adddis.ShowDialog();
         }
 
         private void btnEDITNEIGHB_Click(object sender, EventArgs e)
@@ -129,7 +128,8 @@ namespace Computing_Coursework
 
         private void btnADDNEIGHB_Click(object sender, EventArgs e)
         {
-
+            Form addneigh = new AddNeighb();
+            addneigh.ShowDialog();
         }
 
         //property delete button
@@ -263,7 +263,6 @@ namespace Computing_Coursework
             //goes through each district 
             foreach (District district in DistrictDATA.libDistrict)
             {
-                Debug.WriteLine(district.GetDistName());
                 //writes in each districts name using its getter
                 listViewDISTRICT.Items.Add(district.GetDistName());
             }
@@ -275,7 +274,6 @@ namespace Computing_Coursework
             listViewNEIGHB.Items.Clear();
             foreach (Neighbour neighb in DistrictDATA.libDistrict[districtIndex].GetNeighbLib())
             {
-                Debug.WriteLine(neighb.GetneighbName());
                 listViewNEIGHB.Items.Add(neighb.GetneighbName());
             }
             listViewNEIGHB.SelectedItem = listViewNEIGHB.Items[0];
@@ -286,7 +284,6 @@ namespace Computing_Coursework
             listViewPROP.Items.Clear();
             foreach (Property prop in DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetPropLib())
             {
-                Debug.WriteLine(prop.GetpropName());
                 listViewPROP.Items.Add(prop.GetpropName());                
             }
             
@@ -335,6 +332,16 @@ namespace Computing_Coursework
         {
 
         }
-        
+
+        private void FrontPage_Activated(object sender, EventArgs e)
+        {
+            //gets the positional value of the selected district (event listener)
+            int districtIndex = listViewDISTRICT.SelectedIndex;
+            //gets the positional value of the selected neighbourhood (event listener)
+            int neighborhoodIndex = listViewNEIGHB.SelectedIndex;
+            showDist();
+            showNeighbs(districtIndex);
+            showProp(districtIndex, neighborhoodIndex);
+        }
     }
 }

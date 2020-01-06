@@ -40,7 +40,7 @@ namespace Computing_Coursework
                 if (districtAssign == DistrictDATA.libDistrict[i].GetDistName())
                 {
                     string newNeighbName = TXTnewNeighbName.Text;
-                    int newNeighbProps = Convert.ToInt32(TXTamountOfProps.Text);
+                    int newNeighbProps = 0;
                     int distNum = DistrictDATA.libDistrict[i].GetnumNaighbsInDistrict();
 
                     District district = new District(districtAssign, distNum.ToString());

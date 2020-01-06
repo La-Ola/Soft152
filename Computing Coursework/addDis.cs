@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Computing_Coursework
@@ -22,22 +23,26 @@ namespace Computing_Coursework
 
         }
 
-        private void TXTdistname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TXTDistNeighbs_TextChanged(object sender, EventArgs e)
+        private void TXTdist_TextChanged(object sender, EventArgs e)
         {
 
         }
    
         private void BTNsubName_Click(object sender, EventArgs e)
         {
-            string newDistName = TXTdistname.Text;
-            string newDistNeighbs = TXTDistNeighbs.Text;
+            string newDistName = TXTDist.Text;
+            int newDistNeighbs = 0;
 
             District district = new District(newDistName, newDistNeighbs.ToString());
+            Debug.WriteLine(newDistName);
+            //get length of array
+            int lengthOf = DistrictDATA.libDistrict.Length;
+            //makes array one bigger
+            Array.Resize(ref DistrictDATA.libDistrict, lengthOf + 1);
+            //adds new neighbourhood to District array
+            DistrictDATA.libDistrict[lengthOf] = district;
+
+            this.Hide();
         } 
     }
 }
