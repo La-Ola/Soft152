@@ -280,7 +280,6 @@
             this.Text = " ";
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.FrontPage_Activated);
-            this.Load += new System.EventHandler(this.FrontPage_Load);
             this.GrpBxDistricts.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

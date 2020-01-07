@@ -272,6 +272,7 @@ namespace Computing_Coursework
         private void showNeighbs(int districtIndex)
         {
             listViewNEIGHB.Items.Clear();
+
             if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
             {
                 foreach (Neighbour neighb in DistrictDATA.libDistrict[districtIndex].GetNeighbLib())
@@ -284,9 +285,8 @@ namespace Computing_Coursework
             else
             {
                 listViewNEIGHB.Items.Add("No Neighbouhoods Available");
-            }
-                
-            }
+            }               
+           
         }
 
         private void showProp(int districtIndex, int neighborhoodIndex)
