@@ -272,18 +272,19 @@ namespace Computing_Coursework
         private void showNeighbs(int districtIndex)
         {
             listViewNEIGHB.Items.Clear();
-            foreach (Neighbour neighb in DistrictDATA.libDistrict[districtIndex].GetNeighbLib())
+            if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
             {
-                if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
-                { 
+                foreach (Neighbour neighb in DistrictDATA.libDistrict[districtIndex].GetNeighbLib())
+                {
                     listViewNEIGHB.Items.Add(neighb.GetneighbName());
                     listViewNEIGHB.SelectedItem = listViewNEIGHB.Items[0];
+                }
 
-                }
-                else
-                {
-                    listViewNEIGHB.Items.Add("No Neighbouhoods Available");
-                }
+            }
+            else
+            {
+                listViewNEIGHB.Items.Add("No Neighbouhoods Available");
+            }
                 
             }
         }
