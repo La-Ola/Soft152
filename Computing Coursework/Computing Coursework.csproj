@@ -66,6 +66,24 @@
       <DependentUpon>AddProp.cs</DependentUpon>
     </Compile>
     <Compile Include="DistrictDATA.cs" />
+    <Compile Include="EditDist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDist.Designer.cs">
+      <DependentUpon>EditDist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditNeighb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNeighb.Designer.cs">
+      <DependentUpon>EditNeighb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProp.Designer.cs">
+      <DependentUpon>EditProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrontPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +105,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddProp.resx">
       <DependentUpon>AddProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDist.resx">
+      <DependentUpon>EditDist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNeighb.resx">
+      <DependentUpon>EditNeighb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProp.resx">
+      <DependentUpon>EditProp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontPage.resx">
       <DependentUpon>FrontPage.cs</DependentUpon>

@@ -120,7 +120,8 @@ namespace Computing_Coursework
 
         private void btnEDITDIST_Click(object sender, EventArgs e)
         {
-
+            Form editDis = new EditDist();
+            editDis.ShowDialog();
         }
 
         private void btnADDDIST_Click(object sender, EventArgs e)
@@ -131,7 +132,8 @@ namespace Computing_Coursework
 
         private void btnEDITNEIGHB_Click(object sender, EventArgs e)
         {
-
+            Form editNeigh = new EditNeighb();
+            editNeigh.ShowDialog();
         }
 
         private void btnADDNEIGHB_Click(object sender, EventArgs e)
@@ -170,7 +172,8 @@ namespace Computing_Coursework
 
         private void btnEDITPROP_Click(object sender, EventArgs e)
         {
-
+            Form editProp = new EditProp();
+            editProp.ShowDialog();
         }
 
         private void btnADDPROP_Click(object sender, EventArgs e)
