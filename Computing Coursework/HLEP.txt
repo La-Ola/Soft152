@@ -1,9 +1,0 @@
-	    lstVSearchAll.Columns.Add("District Name", 300);
-            lstVSearchAll.Columns.Add("Neighborhood Count", 200);
-            foreach(District district in DistrictDATA.libDistrict)
-            {
-                string name = district.getDistName();
-                
-                
-            }
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^how to get my columby bois, columns and rows 
