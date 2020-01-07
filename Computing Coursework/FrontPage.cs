@@ -40,12 +40,16 @@ namespace Computing_Coursework
             int districtIndex = listViewDISTRICT.SelectedIndex;
             //gets the positional value of the selected neighbourhood (event listener)
             int neighborhoodIndex = listViewNEIGHB.SelectedIndex;
+            if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
+            {
+
+                //runs function to show properties of selcted neighbourhood.
+                showNeighbInfo(districtIndex, neighborhoodIndex);
+            }
             //runs function to show properties of selcted district and neighbourhood.
             showProp(districtIndex, neighborhoodIndex);
-            //runs function to show properties of selcted neighbourhood.
-            showNeighbInfo(districtIndex, neighborhoodIndex);
         }
-        
+
         private void listViewPROP_SelectedIndexChanged(object sender, EventArgs e)
         {
             //gets the positional value of the selected district (event listener)
@@ -54,8 +58,11 @@ namespace Computing_Coursework
             int neighborhoodIndex = listViewNEIGHB.SelectedIndex;
             //gets the positional value of the selected property (event listener)
             int propIndex = listViewPROP.SelectedIndex;
-            //runs function to show properties of selcted property.
-            showPropInfo(districtIndex, neighborhoodIndex, propIndex);
+            if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
+            {
+                //runs function to show properties of selcted property.
+                showPropInfo(districtIndex, neighborhoodIndex, propIndex);
+            }
         }
 
         //search bar
@@ -149,6 +156,11 @@ namespace Computing_Coursework
             int LowerProp = DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetnumPropsInNeighbs() - 1;
             DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].SetnumPropsInNeighbs(LowerProp);
             //updates the listboxes
+            //get length of array
+            int lengthOf = DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].libAllProperties.Length;
+            //makes array one bigger
+            Array.Resize(ref DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].libAllProperties, lengthOf - 1);
+
             showNeighbs(districtIndex);
             showProp(districtIndex, neighborhoodIndex);
             listViewPROP.SelectedItem = listViewPROP.Items[0];
@@ -272,21 +284,19 @@ namespace Computing_Coursework
         private void showNeighbs(int districtIndex)
         {
             listViewNEIGHB.Items.Clear();
-
-            if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
+            if (DistrictDATA.libDistrict[districtIndex].GetnumNaighbsInDistrict() != 0)
             {
                 foreach (Neighbour neighb in DistrictDATA.libDistrict[districtIndex].GetNeighbLib())
                 {
                     listViewNEIGHB.Items.Add(neighb.GetneighbName());
                     listViewNEIGHB.SelectedItem = listViewNEIGHB.Items[0];
                 }
-
             }
             else
             {
-                listViewNEIGHB.Items.Add("No Neighbouhoods Available");
-            }               
-           
+                listViewPROP.Items.Add("No Properties Available");
+            }
+
         }
 
         private void showProp(int districtIndex, int neighborhoodIndex)
