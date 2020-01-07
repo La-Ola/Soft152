@@ -25,13 +25,14 @@ namespace Computing_Coursework
         private void BTNsubName_Click(object sender, EventArgs e)
         {
             string districtAssign = TXTdistname.Text;
-            for (int i = 0; i <= DistrictDATA.libDistrict.Length ; i++)
+            for (int i = 0; i < DistrictDATA.libDistrict.Length ; i++)
             {
                 
-                if (districtAssign == DistrictDATA.libDistrict[i].GetDistName())
+                if (districtAssign.ToString().ToLower() == DistrictDATA.libDistrict[i].GetDistName().ToLower())
                 {
                     string newNeighbName = TXTnewNeighbName.Text;
                     int newNeighbProps = 0;
+
                     int distNumUp = DistrictDATA.libDistrict[i].GetnumNaighbsInDistrict() + 1;
                     DistrictDATA.libDistrict[i].SetnumNaighbsInDistrict(distNumUp.ToString());
 
@@ -44,10 +45,10 @@ namespace Computing_Coursework
                     //adds new neighbourhood to District array
                     DistrictDATA.libDistrict[i].libAllNeighbs[lengthOf] = neighbour;
 
-                    this.Hide();
+                   
                 }
             }
-            
+            this.Hide();
             
         }
     }

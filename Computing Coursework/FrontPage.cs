@@ -44,6 +44,7 @@ namespace Computing_Coursework
             {
                 //runs function to show properties of selcted neighbourhood.
                 showNeighbInfo(districtIndex, neighborhoodIndex);
+                Debug.WriteLine("df");
             }
             //runs function to show properties of selcted district and neighbourhood.
             showProp(districtIndex, neighborhoodIndex);
@@ -311,7 +312,7 @@ namespace Computing_Coursework
                 foreach (Property prop in DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetPropLib())
                 {
                     listViewPROP.Items.Add(prop.GetpropName());
-                    listViewPROP.SelectedItem = listViewPROP.Items[0];
+                    //listViewPROP.SelectedItem = listViewPROP.Items[0];
                 }
             }                           
         }
