@@ -40,11 +40,11 @@ namespace Computing_Coursework
             int districtIndex = listViewDISTRICT.SelectedIndex;
             //gets the positional value of the selected neighbourhood (event listener)
             int neighborhoodIndex = listViewNEIGHB.SelectedIndex;
+            //if statement aids in avoiding errors when a new district is added
             if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0 )
             {
                 //runs function to show properties of selcted neighbourhood.
                 showNeighbInfo(districtIndex, neighborhoodIndex);
-                Debug.WriteLine("df");
             }
             //runs function to show properties of selcted district and neighbourhood.
             showProp(districtIndex, neighborhoodIndex);
@@ -58,7 +58,8 @@ namespace Computing_Coursework
             int neighborhoodIndex = listViewNEIGHB.SelectedIndex;
             //gets the positional value of the selected property (event listener)
             int propIndex = listViewPROP.SelectedIndex;
-            if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
+            //aids in avoiding errors when the district is added and a neighbourhood is added
+            if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0 || DistrictDATA.libDistrict[districtIndex].libAllNeighbs[neighborhoodIndex].numPropsInNeighbs != 0)
             {
                 //runs function to show properties of selcted property.
                 showPropInfo(districtIndex, neighborhoodIndex, propIndex);
@@ -307,12 +308,11 @@ namespace Computing_Coursework
         private void showProp(int districtIndex, int neighborhoodIndex)
         {
             listViewPROP.Items.Clear();
-            if (DistrictDATA.libDistrict[districtIndex].GetnumNaighbsInDistrict() != 0)
+            if (DistrictDATA.libDistrict[districtIndex].GetnumNaighbsInDistrict() != 0 || DistrictDATA.libDistrict[districtIndex].libAllNeighbs[neighborhoodIndex].numPropsInNeighbs != 0)
             {
                 foreach (Property prop in DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetPropLib())
                 {
                     listViewPROP.Items.Add(prop.GetpropName());
-                    //listViewPROP.SelectedItem = listViewPROP.Items[0];
                 }
             }                           
         }
@@ -331,7 +331,7 @@ namespace Computing_Coursework
         {
             lstboxDisplay.Items.Clear();
             lstboxDisplay.Items.Add("Neighbourhood Name: " + DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetneighbName());
-            lstboxDisplay.Items.Add("Number of Pproperties: " + DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetnumPropsInNeighbs());
+            lstboxDisplay.Items.Add("Number of Properties: " + DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetnumPropsInNeighbs());
 
         }
 

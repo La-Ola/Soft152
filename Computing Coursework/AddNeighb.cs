@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Computing_Coursework
 {
@@ -16,15 +17,20 @@ namespace Computing_Coursework
         {
             InitializeComponent();
         }
+        
+        private void TXTDisName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void TXTnewNeighbName_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+       
         private void BTNsubName_Click(object sender, EventArgs e)
         {
-            string districtAssign = TXTdistname.Text;
+            string districtAssign = TXTDisName.Text;
             for (int i = 0; i < DistrictDATA.libDistrict.Length ; i++)
             {
                 
@@ -43,13 +49,13 @@ namespace Computing_Coursework
                     //makes array one bigger
                     Array.Resize(ref DistrictDATA.libDistrict[i].libAllNeighbs, lengthOf + 1);
                     //adds new neighbourhood to District array
-                    DistrictDATA.libDistrict[i].libAllNeighbs[lengthOf] = neighbour;
-
-                   
+                    DistrictDATA.libDistrict[i].libAllNeighbs[lengthOf] = neighbour;                   
                 }
             }
             this.Hide();
             
         }
+
+        
     }
 }

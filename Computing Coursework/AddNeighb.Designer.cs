@@ -30,23 +30,23 @@ namespace Computing_Coursework
         /// </summary>
         private void InitializeComponent()
         {
-            this.TXTdistname = new System.Windows.Forms.Label();
+            this.lstbox = new System.Windows.Forms.Label();
             this.TXTDisName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TXTnewNeighbName = new System.Windows.Forms.TextBox();
             this.BTNsubName = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // TXTdistname
+            // lstbox
             // 
-            this.TXTdistname.AutoSize = true;
-            this.TXTdistname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.TXTdistname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTdistname.Location = new System.Drawing.Point(12, 29);
-            this.TXTdistname.Name = "TXTdistname";
-            this.TXTdistname.Size = new System.Drawing.Size(197, 22);
-            this.TXTdistname.TabIndex = 1;
-            this.TXTdistname.Text = "        District Name        ";
+            this.lstbox.AutoSize = true;
+            this.lstbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.lstbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstbox.Location = new System.Drawing.Point(12, 29);
+            this.lstbox.Name = "lstbox";
+            this.lstbox.Size = new System.Drawing.Size(197, 22);
+            this.lstbox.TabIndex = 1;
+            this.lstbox.Text = "        District Name        ";
             // 
             // TXTDisName
             // 
@@ -55,7 +55,7 @@ namespace Computing_Coursework
             this.TXTDisName.Name = "TXTDisName";
             this.TXTDisName.Size = new System.Drawing.Size(240, 26);
             this.TXTDisName.TabIndex = 2;
-            this.TXTDisName.TextChanged += new System.EventHandler(this.TXTDistName_TextChanged);
+            this.TXTDisName.TextChanged += new System.EventHandler(this.TXTDisName_TextChanged);
             // 
             // label1
             // 
@@ -100,7 +100,7 @@ namespace Computing_Coursework
             this.Controls.Add(this.TXTnewNeighbName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TXTDisName);
-            this.Controls.Add(this.TXTdistname);
+            this.Controls.Add(this.lstbox);
             this.Name = "AddNeighb";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNeighb";
@@ -110,14 +110,11 @@ namespace Computing_Coursework
 
         }
 
-        private void TXTDistName_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         #endregion
 
-        private System.Windows.Forms.Label TXTdistname;
+        private System.Windows.Forms.Label lstbox;
         private System.Windows.Forms.TextBox TXTDisName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXTnewNeighbName;
