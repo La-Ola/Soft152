@@ -107,11 +107,9 @@ namespace Computing_Coursework
                             int minimumNights = Convert.ToInt32(TXTMinNight.Text);
                             int availability = Convert.ToInt32(TXTAvail.Text);
 
-                            Debug.WriteLine("enter");
-
                             int propNumUp = DistrictDATA.libDistrict[i].libAllNeighbs[j].GetnumPropsInNeighbs() + 1;
                             DistrictDATA.libDistrict[i].libAllNeighbs[j].SetnumPropsInNeighbs(propNumUp);
-                            Debug.WriteLine(propNumUp);
+
                             Property prop = new Property(propID, hostID, propertyForHost, minimumNights, availability,
                                     propName, hostName, roomType, latitude, longitude, price);
 
