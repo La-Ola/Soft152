@@ -175,6 +175,8 @@ namespace Computing_Coursework
 
         private void btnADDPROP_Click(object sender, EventArgs e)
         {
+            Form AddProp = new AddProp();
+            AddProp.ShowDialog();
 
         }
         
@@ -289,9 +291,9 @@ namespace Computing_Coursework
             listViewPROP.Items.Clear();
             if (DistrictDATA.libDistrict[districtIndex].GetnumNaighbsInDistrict() != 0)
             {
-                
+
                 foreach (Neighbour neighb in DistrictDATA.libDistrict[districtIndex].GetNeighbLib())
-                { 
+                {
 
                     listViewNEIGHB.Items.Add(neighb.GetneighbName());
                     listViewNEIGHB.SelectedItem = listViewNEIGHB.Items[0];
@@ -301,6 +303,7 @@ namespace Computing_Coursework
             {
                 listViewNEIGHB.Items.Add("No Neighbourhoods Available");
                 listViewPROP.Items.Add("No Properties Available");
+
             }
 
         }
@@ -308,13 +311,14 @@ namespace Computing_Coursework
         private void showProp(int districtIndex, int neighborhoodIndex)
         {
             listViewPROP.Items.Clear();
-            if (DistrictDATA.libDistrict[districtIndex].GetnumNaighbsInDistrict() != 0 || DistrictDATA.libDistrict[districtIndex].libAllNeighbs[neighborhoodIndex].numPropsInNeighbs != 0)
+            if (DistrictDATA.libDistrict[districtIndex].GetnumNaighbsInDistrict() != 0)
             {
                 foreach (Property prop in DistrictDATA.libDistrict[districtIndex].GetNeighbLib()[neighborhoodIndex].GetPropLib())
                 {
                     listViewPROP.Items.Add(prop.GetpropName());
                 }
-            }                           
+            }
+
         }
 
         //used to show information about district
@@ -361,13 +365,9 @@ namespace Computing_Coursework
 
         private void FrontPage_Activated(object sender, EventArgs e)
         {
-            //gets the positional value of the selected district (event listener)
-            int districtIndex = listViewDISTRICT.SelectedIndex;
-            //gets the positional value of the selected neighbourhood (event listener)
-            int neighborhoodIndex = listViewNEIGHB.SelectedIndex;
             showDist();
-            showNeighbs(districtIndex);
-            showProp(districtIndex, neighborhoodIndex);
+            showNeighbs(0);
+            showProp(0, 0);
         }
     }
 }

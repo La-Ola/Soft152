@@ -59,6 +59,12 @@
     <Compile Include="AddNeighb.Designer.cs">
       <DependentUpon>AddNeighb.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddProp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProp.Designer.cs">
+      <DependentUpon>AddProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="DistrictDATA.cs" />
     <Compile Include="FrontPage.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNeighb.resx">
       <DependentUpon>AddNeighb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProp.resx">
+      <DependentUpon>AddProp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontPage.resx">
       <DependentUpon>FrontPage.cs</DependentUpon>
