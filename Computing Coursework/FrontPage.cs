@@ -40,9 +40,8 @@ namespace Computing_Coursework
             int districtIndex = listViewDISTRICT.SelectedIndex;
             //gets the positional value of the selected neighbourhood (event listener)
             int neighborhoodIndex = listViewNEIGHB.SelectedIndex;
-            if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0)
+            if (DistrictDATA.libDistrict[districtIndex].numNaighbsInDistrict != 0 )
             {
-
                 //runs function to show properties of selcted neighbourhood.
                 showNeighbInfo(districtIndex, neighborhoodIndex);
             }
@@ -272,6 +271,7 @@ namespace Computing_Coursework
         {
 
             listViewDISTRICT.Items.Clear();
+            listViewNEIGHB.Items.Clear();
             //goes through each district 
             foreach (District district in DistrictDATA.libDistrict)
             {
@@ -284,16 +284,20 @@ namespace Computing_Coursework
         private void showNeighbs(int districtIndex)
         {
             listViewNEIGHB.Items.Clear();
+            listViewPROP.Items.Clear();
             if (DistrictDATA.libDistrict[districtIndex].GetnumNaighbsInDistrict() != 0)
             {
+                
                 foreach (Neighbour neighb in DistrictDATA.libDistrict[districtIndex].GetNeighbLib())
-                {
+                { 
+
                     listViewNEIGHB.Items.Add(neighb.GetneighbName());
                     listViewNEIGHB.SelectedItem = listViewNEIGHB.Items[0];
                 }
             }
             else
             {
+                listViewNEIGHB.Items.Add("No Neighbourhoods Available");
                 listViewPROP.Items.Add("No Properties Available");
             }
 
@@ -309,14 +313,7 @@ namespace Computing_Coursework
                     listViewPROP.Items.Add(prop.GetpropName());
                     listViewPROP.SelectedItem = listViewPROP.Items[0];
                 }
-            }
-            else
-            {
-                listViewPROP.Items.Add("No Properties Available");
-            }
-                                
-                    
-            
+            }                           
         }
 
         //used to show information about district
