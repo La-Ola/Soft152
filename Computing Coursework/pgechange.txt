@@ -1,3 +1,0 @@
-PAGENAME formNumber = new PAGENAME();
-formNumber.ShowDialog();
-this.Hide();
